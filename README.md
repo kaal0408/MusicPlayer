@@ -42,5 +42,5 @@
 ## credit ✨
 - [MUSIC SUPPORT GROUP](https://t.me/Murat_30)
 - [SUKHI](https://github.com/SUKHPAL443) 
-- [OPEN](https://github.com/Kaal0408) 
+- [BOT OWNER](https://github.com/Kaal0408) 
 - [PyTgCalls](https://github.com/pytgcalls/pytgcalls)
