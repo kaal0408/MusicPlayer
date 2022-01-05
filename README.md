@@ -1,25 +1,25 @@
-##### 🎶 Music Dan Video Player UserBot 🎶
+##### 🎶 KAAL MUSIC PLAYER 🎶
 ### 🤖 Telegram UserBot audio+video player
-# ✨ Didukung Oleh 
+# ✨ SUPPORTED BY
 - [PyTgCalls](https://github.com/pytgcalls/pytgcalls)
 - [Pyrogram](https://github.com/pyrogram/pyrogram)
 
 
-# 📝 Persyaratan
+# 📝 CONDITION
 - Python 3.8+
 - FFMPEG
 - Nodejs v16+
 
-## 🛠 MENU BANTUAN
+## 🛠 HELP MENU
 
-#### ⚡ PERINTAH UNTUK SEMUA ORANG
+#### ⚡ COMMANDS FOR EVERYONE
 - `/play for playing music
 - `/vplay for playing videos
 - `/playlist` to see group playlist
 - `/ping` - to check ping speed
 - `/help` - to check help menu
 
-#### ⚡ PERINTAH UNTUK SEMUA ADMIN
+#### ⚡ COMMANDS FOR ALL ADMINS
 - `/resume` - for playing stop music
 - `/pause` - to stop music
 - `/skip` - for skip nusic
@@ -29,10 +29,10 @@
 
 ## 💜 Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/XtomiSN/MusicAndVideoPlayer)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/kaal0408/MusicPlayer)
 
 
-## 📚 Variabel Yang Dibutuhkan
+## 📚 required variables
 - `API_ID` - take it [my.telegram.org](https://my.telegram.org)
 - `API_HASH` - take it [my.telegram.org](https://my.telegram.org)
 - `SESSION` - Sesi String Pyrogram. Dapatkan String Dari [Sini](https://replit.com/@GoodBoysExe/string-session?lite=1&outputonly=1)
