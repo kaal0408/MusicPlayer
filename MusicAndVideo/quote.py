@@ -42,12 +42,12 @@ def isArgInt(message: Message) -> bool:
 @capture_err
 async def quotly_func(client, message: Message):
     if not message.reply_to_message:
-        return await message.reply_text("Membalas Pesan Untuk Mengutipnya !")
+        return await message.reply_text("Reply To Message To Quote It !")
     if not message.reply_to_message.text:
         return await message.reply_text(
-            "Pesan yang Dibalas tidak memiliki teks apa pun! Tolong Balas Pesan Teks !"
+            "Reply Messages does not have any text! Please Reply Text Message !"
         )
-    m = await message.reply_text("`Membuat kutipan Pesan...`")
+    m = await message.reply_text("`CREATE A MESSAGE QUOTE...`")
     if len(message.command) < 2:
         messages = [message.reply_to_message]
 
@@ -55,7 +55,7 @@ async def quotly_func(client, message: Message):
         arg = isArgInt(message)
         if arg[0]:
             if arg[1] < 2 or arg[1] > 10:
-                return await m.edit("Argumen harus antara 2-10.")
+                return await m.edit("ARGUMENTS MUST BE BETWEEN 2-10.")
             count = arg[1]
             messages = await client.get_messages(
                 message.chat.id,
@@ -91,9 +91,9 @@ async def quotly_func(client, message: Message):
         sticker.close()
     except Exception as e:
         await m.edit(
-            "Ada yang salah saat mengutip pesan, bisa"
-            + " Kesalahan ini biasanya terjadi ketika ada "
-            + " pesan yang berisi sesuatu selain teks."
+            "Something went wrong while quoting the message, can you"
+            + " This error usually occurs when there are "
+            + " messages that contain something other than text."
         )
         e = format_exc()
         print(e)
