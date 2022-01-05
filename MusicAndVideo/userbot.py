@@ -69,20 +69,20 @@ async def help(client, m: Message):
     HELP = f"""
 <b>👋 Hallo {m.from_user.mention}!
 
-🛠 MENU BANTUAN
+🛠 HELP MENU
 
-⚡ PERINTAH UNTUK SEMUA ORANG
-• {HNDLR}play [judul lagu | link youtube | balas file audio] - untuk memutar lagu
-• {HNDLR}vplay [judul video | link youtube | balas file video] - untuk memutar video
-• {HNDLR}playlist untuk melihat daftar putar
-• {HNDLR}ping - untuk cek status
-• {HNDLR}help - untuk melihat daftar perintah
+⚡ COMMANDS FOR EVERYONE
+• {HNDLR}play [song title | link youtube | balas file audio] - to play a song
+• {HNDLR}vplay [video title | link youtube | balas file video] - to play a video
+• {HNDLR}playlist to view playlist
+• {HNDLR}ping - to check status....
+• {HNDLR}help - to see a list of commands
 
-⚡ PERINTAH UNTUK SEMUA ADMIN
-• {HNDLR}resume - untuk melanjutkan pemutaran lagu atau video
-• {HNDLR}pause - untuk untuk menjeda pemutaran lagu atau video
-• {HNDLR}skip - untuk melewati lagu atau video
-• {HNDLR}end - untuk mengakhiri pemutaran</b>
+⚡ COMMANDS FOR ADMINS
+• {HNDLR}resume - to continue playing a song or video
+• {HNDLR}pause - to to pause the playback of a song or video
+• {HNDLR}skip - to skip songs or videos
+• {HNDLR}end - to end playback</b>
 """
     await m.reply(HELP)
 
