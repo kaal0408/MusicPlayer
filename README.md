@@ -8,7 +8,7 @@
 # 📝 CONDITION
 - Python 3.8+
 - FFMPEG
-- Nodejs v16+
+- Node.js v16+
 
 ## 🛠 HELP MENU
 
@@ -35,7 +35,7 @@
 ## 📚 required variables
 - `API_ID` - take it [my.telegram.org](https://my.telegram.org)
 - `API_HASH` - take it [my.telegram.org](https://my.telegram.org)
-- `SESSION` - Sesi String Pyrogram. Dapatkan String Dari [Sini](https://replit.com/@GoodBoysExe/string-session?lite=1&outputonly=1)
+- `SESSION` - PYROGRAM STRING SESSION. GENERATE YOUR STRING SESSION [KAAL](https://replit.com/@GoodBoysExe/string-session?lite=1&outputonly=1)
 - `SUDO_USER` - sudo user id
 
 
