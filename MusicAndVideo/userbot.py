@@ -63,7 +63,7 @@ async def restart(client, m: Message):
     quit()
 
 
-@Client.on_message(filters.command(["help"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["mhelp"], prefixes=f"{HNDLR}"))
 async def help(client, m: Message):
     await m.delete()
     HELP = f"""
@@ -72,11 +72,11 @@ async def help(client, m: Message):
 🛠 HELP MENU
 
 ⚡ COMMANDS FOR EVERYONE
-• {HNDLR}play [song title | link youtube | balas file audio] - to play a song
+• {HNDLR}mplay [song title | link youtube | balas file audio] - to play a song
 • {HNDLR}vplay [video title | link youtube | balas file video] - to play a video
 • {HNDLR}playlist to view playlist
 • {HNDLR}ping - to check status....
-• {HNDLR}help - to see a list of commands
+• {HNDLR}mhelp - to see a list of commands
 
 ⚡ COMMANDS FOR ADMINS
 • {HNDLR}resume - to continue playing a song or video
