@@ -235,7 +235,7 @@ def time_to_seconds(time):
 async def vsong(client, message: Message):
     urlissed = get_text(message)
 
-    pablo = await client.send_message(message.chat.id, f"**🔎 Mencari** `{urlissed}`")
+    pablo = await client.send_message(message.chat.id, f"**🔎 Loading😕😕** `{urlissed}`")
     if not urlissed:
         await pablo.edit(
             "Invalid Command Syntax Please Check Help Menu To Know More!"
