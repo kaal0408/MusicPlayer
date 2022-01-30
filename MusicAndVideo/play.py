@@ -140,7 +140,7 @@ async def play(client, m: Message):
             await m.reply("Reply to Audio File or give something for Search")
         else:
             await m.delete()
-            huehue = await m.reply("🔎 Pencarian")
+            huehue = await m.reply("🔎 Searching😕😕")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
@@ -272,7 +272,7 @@ async def vplay(client, m: Message):
             )
         else:
             await m.delete()
-            huehue = await m.reply("**🔎 Pencarian")
+            huehue = await m.reply("**🔎 Searching😕😕")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             Q = 720
@@ -380,7 +380,7 @@ async def playfrom(client, m: Message):
                     )
             await hmm.delete()
             await m.reply(
-                f"➕ ADD {lmt} SONG INTO THE QUEUE\n• Klik {HNDLR}playlist TO VIEW PLAYLIST**"
+                f"➕ ADD {lmt} SONG INTO THE QUEUE\n• Click {HNDLR}playlist TO VIEW PLAYLIST**"
             )
         except Exception as e:
             await hmm.edit(f"**ERROR** \n`{e}`")
