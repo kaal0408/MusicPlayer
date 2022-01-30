@@ -4,20 +4,15 @@ from pytgcalls import idle
 
 from config import call_py
 from MusicAndVideo.quote import arq
-
-
-async def main():
-    await call_py.start()
-    print(
-        """
-    ------------------
-   | Userbot Started! |
-    ------------------
-"""
-    )
-    await idle()
-    await arq.close()
-
+import os
+from pyrogram import Client, idle
+from pytgcalls import PyTgCalls
+from pytgcalls import idle as pyidle
+from config import bot
 
 bot.start()
-run()
+print("UserBot Started")
+call_py.start()
+print("Vc Client Started")
+pyidle()
+idle()
