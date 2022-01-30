@@ -26,6 +26,11 @@
             "description": "my.telegram.org/apps",
             "required": true
         },
+        "MONGO_DB_URI": {
+            "description": "Enter your MONGO DB URI", 
+            "required": true,
+            "value": "" 
+        },
         "SUDO_USERS": {
             "description": "",
             "required": true
