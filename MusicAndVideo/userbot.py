@@ -40,7 +40,7 @@ async def ping(client, m: Message):
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
     await m_reply.edit(
-        f"<b>💞 PONG</b> `{delta_ping * 1000:.3f} ms` \n<b>⏳ AKTIF</b> - `{uptime}`"
+        f"<b>😕😕 PONG</b> `{delta_ping * 1000:.3f} ms` \n<b>⏳ AKTIF</b> - `{uptime}`"
     )
 
 
@@ -81,6 +81,7 @@ async def help(client, m: Message):
 • {HNDLR}q/quote - to make a quote
 • {HNDLR}tts  - for text in stickers 
 • {HNDLR}id  - to get a user id
+• {HNDLR}git/github  - to get a github account link
 
 ⚡ COMMANDS FOR ADMINS
 • {HNDLR}resume - to continue playing a song or video
