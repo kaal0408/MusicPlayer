@@ -77,6 +77,9 @@ async def help(client, m: Message):
 • {HNDLR}playlist to view playlist
 • {HNDLR}ping - to check status....
 • {HNDLR}mhelp - to see a list of commands
+• {HNDLR}song - to download any song....
+• {HNDLR}q/quote - to make a quote
+• {HNDLR}tts  - for text in stickers 
 
 ⚡ COMMANDS FOR ADMINS
 • {HNDLR}resume - to continue playing a song or video
