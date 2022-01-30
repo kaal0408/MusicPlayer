@@ -14,8 +14,7 @@ API_HASH = os.getenv("API_HASH")
 SESSION = os.getenv("SESSION")
 HNDLR = os.getenv("HNDLR", "/")
 SUDO_USERS = list(map(int, os.getenv("SUDO_USERS").split()))
-MONGO_DB_URI = getenv("MONGO_DB_URI")
-
+MONGO_DB_URI = os.environ.get("MONGO_DB_URI" "")
 contact_filter = filters.create(
     lambda _, __, message: (message.from_user and message.from_user.is_contact)
     or message.outgoing
