@@ -19,12 +19,5 @@ async def main():
     await arq.close()
 
 
-bot = Bot(
-    ":memory:",
-    API_ID,
-    API_HASH,
-    plugins=dict(root="MusicAndVideo"),
-)
-
 bot.start()
 run()
