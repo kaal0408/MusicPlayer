@@ -80,6 +80,7 @@ async def help(client, m: Message):
 • {HNDLR}song - to download any song....
 • {HNDLR}q/quote - to make a quote
 • {HNDLR}tts  - for text in stickers 
+• {HNDLR}id  - to get a user id
 
 ⚡ COMMANDS FOR ADMINS
 • {HNDLR}resume - to continue playing a song or video
