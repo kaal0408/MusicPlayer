@@ -51,7 +51,7 @@ async def deezer(requested_by, query, message: Message):
         + f"🎧 **Requested By:** {message.from_user.mention}\n📡 **Platform:** Deezer"
     )
     m = await message.reply_photo(
-        photo=cover,
+        photo="https://telegra.ph/file/6213d2673486beca02967.png",
         caption=caption,
     )
     os.remove(cover)
@@ -95,7 +95,7 @@ async def saavn(requested_by, query, message):
         + f"🎧 **Requested By:** {message.from_user.mention}\n📡 **Platform:** JioSaavn"
     )
     m = await message.reply_photo(
-        photo=cover,
+        photo="https://telegra.ph/file/6213d2673486beca02967.png",
         caption=caption,
     )
     os.remove(cover)
