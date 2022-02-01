@@ -20,89 +20,6 @@ from pytgcalls import GroupCall
 
 from db import db
 
-@app.on_message(filters.command("splay") & ~filters.private)
-async def queuer(_, message):
-    global running
-    try:
-        usage = "**Usage:**\n__**/splay Song_Name**__"
-        if len(message.command) < 3:
-            return await message.reply_text(usage, quote=False)
-        text = message.text.split(None, 2)[1:]
-        service = text[0].lower()
-        song_name = text[1]
-        requested_by = message.from_user.first_name
-        services = ["saavn"]
-        if service not in services:
-            return await message.reply_text(usage, quote=False)
-        await message.delete()
-        chat_id = message.chat.id
-        if chat_id not in db:
-            db[chat_id] = {}
-
-        if "queue" not in db[chat_id]:
-            db[chat_id]["queue"] = asyncio.Queue()
-        if not db[chat_id]["queue"].empty():
-            await message.reply_text("__**Added To Queue.__**", quote=False)
-        await db[chat_id]["queue"].put(
-            {
-                "service": savan
-                "requested_by": requested_by,
-                "query": song_name,
-                "message": message,
-            }
-        )
-        if "running" not in db[chat_id]:
-            db[chat_id]["running"] = False
-        if not db[chat_id]["running"]:
-            db[chat_id]["running"] = True
-            await start_queue(chat_id)
-    except Exception as e:
-        await message.reply_text(str(e), quote=False)
-        e = traceback.format_exc()
-        print(e)
-
-
-@app.on_message(filters.command("dplay") & ~filters.private)
-async def queuer(_, message):
-    global running
-    try:
-        usage = "**Usage:**\n__**/dplay  Song_Name**__"
-        if len(message.command) < 3:
-            return await message.reply_text(usage, quote=False)
-        text = message.text.split(None, 2)[1:]
-        service = text[0].lower()
-        song_name = text[1]
-        requested_by = message.from_user.first_name
-        services = ["saavn"]
-        if service not in services:
-            return await message.reply_text(usage, quote=False)
-        await message.delete()
-        chat_id = message.chat.id
-        if chat_id not in db:
-            db[chat_id] = {}
-
-        if "queue" not in db[chat_id]:
-            db[chat_id]["queue"] = asyncio.Queue()
-        if not db[chat_id]["queue"].empty():
-            await message.reply_text("__**Added To Queue.__**", quote=False)
-        await db[chat_id]["queue"].put(
-            {
-                "service": deezer
-                "requested_by": requested_by,
-                "query": song_name,
-                "message": message,
-            }
-        )
-        if "running" not in db[chat_id]:
-            db[chat_id]["running"] = False
-        if not db[chat_id]["running"]:
-            db[chat_id]["running"] = True
-            await start_queue(chat_id)
-    except Exception as e:
-        await message.reply_text(str(e), quote=False)
-        e = traceback.format_exc()
-        print(e)
-
 
 
 # Deezer
@@ -187,7 +104,92 @@ async def saavn(requested_by, query, message):
     await m.delete()
 
 
-@app.on_message(filters.command("joinvc") & ~filters.private)
+@Client.on_message(filters.command(["splay"], prefixes=f"{HNDLR}"))
+async def queuer(_, message):
+    global running
+    try:
+        usage = "**Usage:**\n__**/splay Song_Name**__"
+        if len(message.command) < 3:
+            return await message.reply_text(usage, quote=False)
+        text = message.text.split(None, 2)[1:]
+        service = text[0].lower()
+        song_name = text[1]
+        requested_by = message.from_user.first_name
+        services = ["saavn"]
+        if service not in services:
+            return await message.reply_text(usage, quote=False)
+        await message.delete()
+        chat_id = message.chat.id
+        if chat_id not in db:
+            db[chat_id] = {}
+
+        if "queue" not in db[chat_id]:
+            db[chat_id]["queue"] = asyncio.Queue()
+        if not db[chat_id]["queue"].empty():
+            await message.reply_text("__**Added To Queue.__**", quote=False)
+        await db[chat_id]["queue"].put(
+            {
+                "service": savan
+                "requested_by": requested_by,
+                "query": song_name,
+                "message": message,
+            }
+        )
+        if "running" not in db[chat_id]:
+            db[chat_id]["running"] = False
+        if not db[chat_id]["running"]:
+            db[chat_id]["running"] = True
+            await start_queue(chat_id)
+    except Exception as e:
+        await message.reply_text(str(e), quote=False)
+        e = traceback.format_exc()
+        print(e)
+
+@Client.on_message(filters.command(["dplay"], prefixes=f"{HNDLR}"))
+async def queuer(_, message):
+    global running
+    try:
+        usage = "**Usage:**\n__**/dplay  Song_Name**__"
+        if len(message.command) < 3:
+            return await message.reply_text(usage, quote=False)
+        text = message.text.split(None, 2)[1:]
+        service = text[0].lower()
+        song_name = text[1]
+        requested_by = message.from_user.first_name
+        services = ["saavn"]
+        if service not in services:
+            return await message.reply_text(usage, quote=False)
+        await message.delete()
+        chat_id = message.chat.id
+        if chat_id not in db:
+            db[chat_id] = {}
+
+        if "queue" not in db[chat_id]:
+            db[chat_id]["queue"] = asyncio.Queue()
+        if not db[chat_id]["queue"].empty():
+            await message.reply_text("__**Added To Queue.__**", quote=False)
+        await db[chat_id]["queue"].put(
+            {
+                "service": deezer
+                "requested_by": requested_by,
+                "query": song_name,
+                "message": message,
+            }
+        )
+        if "running" not in db[chat_id]:
+            db[chat_id]["running"] = False
+        if not db[chat_id]["running"]:
+            db[chat_id]["running"] = True
+            await start_queue(chat_id)
+    except Exception as e:
+        await message.reply_text(str(e), quote=False)
+        e = traceback.format_exc()
+        print(e)
+
+
+
+
+@Client.on_message(filters.command(["joinvc"], prefixes=f"{HNDLR}"))
 async def joinvc(_, message):
     chat_id = message.chat.id
     if chat_id not in db:
@@ -197,8 +199,7 @@ async def joinvc(_, message):
         return await message.reply_text(
             "__**Bot Is Already In The VC**__", quote=False
         )
-
-@app.on_message(filters.command("leavevc") & ~filters.private)
+@Client.on_message(filters.command(["leavevc"], prefixes=f"{HNDLR}"))
 async def leavevc(_, message):
     chat_id = message.chat.id
     if chat_id in db:
@@ -209,8 +210,7 @@ async def leavevc(_, message):
             await vc.stop()
     await message.reply_text("__**Left The Voice Chat**__", quote=False)
 
-
-@app.on_message(filters.command("volume") & ~filters.private)
+@Client.on_message(filters.command(["volume"], prefixes=f"{HNDLR}"))
 async def volume_bot(_, message):
     usage = "**Usage:**\n/volume [1-200]"
     chat_id = message.chat.id
