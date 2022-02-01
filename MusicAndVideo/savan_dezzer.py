@@ -185,3 +185,47 @@ async def saavn(requested_by, query, message):
     duration = int(sduration)
     await pause_skip_watcher(m, duration, message.chat.id)
     await m.delete()
+
+
+@app.on_message(filters.command("joinvc") & ~filters.private)
+async def joinvc(_, message):
+    chat_id = message.chat.id
+    if chat_id not in db:
+        db[chat_id] = {}
+
+    if "call" in db[chat_id]:
+        return await message.reply_text(
+            "__**Bot Is Already In The VC**__", quote=False
+        )
+
+@app.on_message(filters.command("leavevc") & ~filters.private)
+async def leavevc(_, message):
+    chat_id = message.chat.id
+    if chat_id in db:
+        if "call" in db[chat_id]:
+            vc = db[chat_id]["call"]
+            del db[chat_id]["call"]
+            await vc.leave_current_group_call()
+            await vc.stop()
+    await message.reply_text("__**Left The Voice Chat**__", quote=False)
+
+
+@app.on_message(filters.command("volume") & ~filters.private)
+async def volume_bot(_, message):
+    usage = "**Usage:**\n/volume [1-200]"
+    chat_id = message.chat.id
+    if chat_id not in db:
+        return await message.reply_text("VC isn't started")
+    if "call" not in db[chat_id]:
+        return await message.reply_text("VC isn't started")
+    vc = db[chat_id]["call"]
+    if len(message.command) != 2:
+        return await message.reply_text(usage, quote=False)
+    volume = int(message.text.split(None, 1)[1])
+    if (volume < 1) or (volume > 200):
+        return await message.reply_text(usage, quote=False)
+    try:
+        await vc.set_my_volume(volume=volume)
+    except ValueError:
+        return await message.reply_text(usage, quote=False)
+    await message.reply_text(f"**Volume Set To {volume}**", quote=False)
