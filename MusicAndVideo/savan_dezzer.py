@@ -16,7 +16,7 @@ from pyrogram import filters, idle
 from pyrogram.raw.functions.phone import CreateGroupCall
 from pyrogram.raw.types import InputPeerChannel
 from pyrogram.types import Message
-from pytgcalls import GroupCall
+from pytgcalls import StreamType
 
 from db import db
 
