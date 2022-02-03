@@ -18,7 +18,7 @@ from pyrogram.raw.functions.phone import CreateGroupCall
 from pyrogram.raw.types import InputPeerChannel
 from pyrogram.types import Message
 from pytgcalls import StreamType
-
+from config import HNDLR
 from db import db
 
 
