@@ -170,7 +170,7 @@ async def queuer(_, message):
             await message.reply_text("__**Added To Queue.__**", quote=False)
         await db[chat_id]["queue"].put(
             {
-                "service": deezer
+                "service": deezer,
                 "requested_by": requested_by,
                 "query": song_name,
                 "message": message,
