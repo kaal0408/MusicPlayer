@@ -79,15 +79,24 @@ async def help(client, m: Message):
 • {HNDLR}mhelp - to see a list of commands
 • {HNDLR}song - to download any song....
 • {HNDLR}q/quote - to make a quote
-• {HNDLR}tts  - for text in stickers 
+• {HNDLR}tts  - To change text into voice 
 • {HNDLR}id  - to get a user id
-• {HNDLR}git/github  - to get a github account link
+• {HNDLR}git  - to get a github account link
+• {HNDLR}github  - to get a github account link
+• {HNDLR}truth  - For truth dare game
+• {HNDLR}dare  - For truth dare game
 
 ⚡ COMMANDS FOR ADMINS
 • {HNDLR}resume - to continue playing a song or video
 • {HNDLR}pause - to to pause the playback of a song or video
 • {HNDLR}skip - to skip songs or videos
 • {HNDLR}end - to end playback</b>
+
+⚡ COMMANDS FOR SUDO
+• {HNDLR}restart  - to restart the music and video bot
+ 
+⚡ DEV - Loverboyxd, Manjeet SINGH
+⚡ Powered by - @Murat_30_God
 """
     await m.reply(HELP)
 
