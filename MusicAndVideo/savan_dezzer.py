@@ -12,6 +12,7 @@ from sys import version as pyver
 import db
 db.init()
 
+from pyrogram import Client
 from pyrogram import filters, idle
 from pyrogram.raw.functions.phone import CreateGroupCall
 from pyrogram.raw.types import InputPeerChannel
