@@ -91,7 +91,7 @@ async def help(client, m: Message):
 • {HNDLR}pause - to to pause the playback of a song or video
 • {HNDLR}skip - to skip songs or videos
 • {HNDLR}end - to end playback</b>
-• {HNDLR}volume - volume {number} to increase decrease volume in voice chat
+• {HNDLR}volume - volume  to increase decrease volume in voice chat
 
 ⚡ COMMANDS FOR SUDO
 • {HNDLR}restart  - to restart the music and video bot
